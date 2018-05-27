@@ -1,9 +1,13 @@
 class User {
-    constructor(name, message) {
+    constructor(name) {
         this.name = name;
-        this.messages = [message];
+        this.messages = [];
+    }
+    addMessage (message) {
+        const newMessage = new Message(message);
+        this.message.push(newMessage);  
+        return message;
     }
 }
-
 
 module.exports = User;
