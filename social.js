@@ -1,5 +1,4 @@
 const User = require('./user.js');
-const Tweet = require('./tweet.js');
 
 class Social {
     constructor() {
@@ -9,13 +8,12 @@ class Social {
     // if user exist, add a message
     postMessage(name, messsage) {
         if (this.isUser(name)) {
-            this.isUser(name).addMessage();
+            this.isUser(name).addMessage(messsage);
         }
         else {
             const newUser = this.addUser(name);
-            newUser.addMessage(text);
+            newUser.addMessage(messsage);
         }
-        console.log(this.users);
     }
 
     addUser (name) {
