@@ -3,12 +3,12 @@ const Tweet = require('./tweet.js');
 class User {
     constructor(name) {
         this.name = name;
-        this.messages = [];
+        this.tweets = [];
     }
-    addMessage (message) {
-        const newMessage = new Tweet(message);
-        this.messages.push(newMessage);  
-        return message;
+    addTweet (text) {
+        const newTweet = new Tweet(text);
+        this.tweets.push(newTweet);  
+        return newTweet;
     }
 }
 

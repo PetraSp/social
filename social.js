@@ -8,11 +8,12 @@ class Social {
     // if user exist, add a message
     postMessage(name, messsage) {
         if (this.isUser(name)) {
-            this.isUser(name).addMessage(messsage);
+            this.isUser(name).addTweet(messsage);
+        console.log(this.isUser(name));
         }
         else {
             const newUser = this.addUser(name);
-            newUser.addMessage(messsage);
+            newUser.addTweet(messsage);
         }
     }
 
