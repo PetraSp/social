@@ -9,11 +9,17 @@ class Social {
     postMessage(name, messsage) {
         if (this.isUser(name)) {
             this.isUser(name).addTweet(messsage);
-        console.log(this.isUser(name));
+        // console.log(this.isUser(name));
         }
         else {
             const newUser = this.addUser(name);
             newUser.addTweet(messsage);
+        }
+    }
+
+    read(username) {
+        if (this.isUser(username)) {
+            this.isUser(username).printMessages();
         }
     }
 

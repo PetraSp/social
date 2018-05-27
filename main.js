@@ -21,6 +21,7 @@ function main() {
                     break;
                 case undefined:
                     console.log("reading");
+                    social.read(username);
                     break;
                 case "follows":
                     console.log("following");

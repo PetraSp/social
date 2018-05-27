@@ -10,6 +10,12 @@ class User {
         this.tweets.push(newTweet);  
         return newTweet;
     }
+
+    printMessages() {
+        for (let i = 0; i < this.tweets.length; i++) {
+            console.log(this.tweets[i].toString());
+        }
+    }
 }
 
 module.exports = User;
