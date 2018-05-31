@@ -11,9 +11,15 @@ class User {
         return newTweet;
     }
 
-    printMessages() {
+    printMessages(wall) {
+        let strName = "";
+
+        if (wall) {
+            strName = this.name.toString() + ' - ';
+        }
+
         for (let i = 0; i < this.tweets.length; i++) {
-            console.log(this.tweets[i].toString());
+            console.log(strName + (this.tweets[i].toString()));
         }
     }
 }
