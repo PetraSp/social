@@ -5,7 +5,7 @@ class Tweet {
     }
 
     toString() {
-      return `${this.text} (${new Date(this.date)})`;
+      return `${this.text} (${new Date(Date.now() - this.date).getMinutes()} minutes ago)`;
     }
 }
 
