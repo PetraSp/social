@@ -37,6 +37,20 @@ class Social {
         }
         return false;
     }
+
+    followUser(name, followName) {
+        if (this.isUser(name)) {
+            this.isUser(name).addFollower(followName);
+        }
+    }
+
+    displayWall(username) {
+        let withWall = true;
+        this.isUser(username).printMessages(withWall);
+        for (let i = 0; i < this.isUser(username).follows.length; i++) {
+            this.isUser(this.isUser(username).follows[i]).printMessages(withWall);
+        }
+    }
 }
 
 module.exports = Social;
