@@ -28,7 +28,11 @@ function main() {
                     social.followUser(username, followedName);
                     break;
                 case "wall":
-                    social.displayWall(username);
+                    // social.displayWall(username);
+                    const wallMessages = social.returnWall(username);
+                    for (let i = 0; i < wallMessages.length; i++) {
+                        console.log(wallMessages[i]);
+                    }
                     break;
                 case "exit":
                     console.log("exiting");

@@ -48,10 +48,11 @@ class Social {
             }
         }
     }
-    
-    displayWall(username) {
+
+    // return wall messages
+    returnWall(username) {
         if (this.findUser(username)) {
-            this.findUser(username).printWall();
+            return this.findUser(username).getWall();
         }
     }
 }

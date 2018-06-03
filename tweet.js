@@ -9,6 +9,10 @@ class Tweet {
         return `${this.text} (${this.calculateTimeElapsed()})`;
     }
 
+    toStringWithAuthor() {
+        return `${this.getAuthor()} - ${this.text} (${this.calculateTimeElapsed()})`;
+    }
+
     calculateTimeElapsed() {
         //getSeconds while getMinutes are zero
         while (new Date(Date.now() - this.date).getMinutes() <= 0){

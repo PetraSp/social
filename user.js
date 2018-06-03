@@ -21,8 +21,9 @@ class User {
         return messages;
     }
 
-    printWall() {
+    getWall() {
         const wallTweets = this.tweets.slice();
+        const wallTweetsAsString = [];
 
         for (let i = 0; i < this.follows.length; i++) {
             const followedTweets = this.follows[i].getTweets();
@@ -30,10 +31,12 @@ class User {
         }
 
         wallTweets.sort(this.compareTweets);
-        
+
         for (let i = 0; i < wallTweets.length; i++) {
-            console.log(`${wallTweets[i].getAuthor()} - ${wallTweets[i].toString()}`);
+            wallTweetsAsString.push(wallTweets[i].toStringWithAuthor());
         }
+
+        return wallTweetsAsString;
     }
 
     compareTweets(a, b) {      
