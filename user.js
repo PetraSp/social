@@ -20,16 +20,7 @@ class User {
     }
 
     printWall() {
-        // let strName = "";
-
-        // if {
-        //     strName = this.name.toString() + ' - ';
-        // }
-
-        // for (let i = this.tweets.length-1; i>=0; i--) {
-        //     console.log(strName + (this.tweets[i].toString()));
-        // }
-        const wallTweets = this.tweets;
+        const wallTweets = this.tweets.slice();
 
         for (let i = 0; i < this.follows.length; i++) {
             const followedTweets = this.follows[i].getTweets();
