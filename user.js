@@ -7,12 +7,14 @@ class User {
         this.follows = [];
     }
 
+    // add a new Tweet
     addTweet(text) {
         const newTweet = new Tweet(this.name, text);
         this.tweets.push(newTweet);  
         return newTweet;
     }
 
+    // returns array of messages as strings
     getMessagesAsString() {
         const messages = [];
         for (let i = this.tweets.length-1; i >= 0; i--) {
@@ -21,6 +23,7 @@ class User {
         return messages;
     }
 
+    // return array of all the wall messages as strings
     getWall() {
         const wallTweets = this.tweets.slice();
         const wallTweetsAsString = [];
@@ -39,6 +42,7 @@ class User {
         return wallTweetsAsString;
     }
 
+    // allows to order tweets by date
     compareTweets(a, b) {      
         let comparison = 0;
         if (a.getDate() > b.getDate()) {
@@ -48,13 +52,15 @@ class User {
         }
         return comparison;
     }
-
+    
+    // returns all the tweets
     getTweets() {
         return this.tweets;
     }
 
-    addFollower(followName) {
-        this.follows.push(followName);
+    // subscribe to another user wall
+    addFollower(followedUser) {
+        this.follows.push(followedUser);
     }
 }
 
