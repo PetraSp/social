@@ -1,7 +1,6 @@
 class Tweet {
-    constructor(text){
-        // whenever i write a tweet i have to specify this two things
-        // you can specify
+    constructor(authorName, text){
+        this.authorName = authorName;
         this.text = text;
         this.date = Date.now();
     }
@@ -21,6 +20,14 @@ class Tweet {
             strTime = 'minute';
         }
         return (new Date(Date.now() - this.date).getMinutes()) + ' ' + strTime + ' ago';
+    }
+
+    getAuthor() {
+        return this.authorName;
+    }
+
+    getDate() {
+        return this.date;
     }
 }
 
