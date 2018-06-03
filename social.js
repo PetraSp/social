@@ -38,17 +38,15 @@ class Social {
         return false;
     }
 
-    followUser(name, followName) {
+    followUser(name, followerName) {
         if (this.isUser(name)) {
-            this.isUser(name).addFollower(followName);
+            this.isUser(name).addFollower(this.isUser(followerName));
         }
     }
 
     displayWall(username) {
-        let withWall = true;
-        this.isUser(username).printMessages(withWall);
-        for (let i = 0; i < this.isUser(username).follows.length; i++) {
-            this.isUser(this.isUser(username).follows[i]).printMessages(withWall);
+        if (this.isUser(username)) {
+            this.isUser(username).printWall();
         }
     }
 }
