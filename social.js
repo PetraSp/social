@@ -7,9 +7,8 @@ class Social {
 
     // if user exist, add a message
     postMessage(name, messsage) {
-        if (this.isUser(name)) {
-            this.isUser(name).addTweet(messsage);
-        // console.log(this.isUser(name));
+        if (this.findUser(name)) {
+            this.findUser(name).addTweet(messsage);
         }
         else {
             const newUser = this.addUser(name);
@@ -18,8 +17,8 @@ class Social {
     }
 
     read(username) {
-        if (this.isUser(username)) {
-            this.isUser(username).printMessages();
+        if (this.findUser(username)) {
+            this.findUser(username).printMessages();
         }
     }
 
@@ -29,24 +28,24 @@ class Social {
         return newUser; 
     }
 
-    isUser (username) {
+    findUser (username) {
         for (let i = 0; i < this.users.length; i++) {
             if (username === this.users[i].name) {
                 return this.users[i];
             }
         }
-        return false;
+        return null;
     }
 
     followUser(name, followerName) {
-        if (this.isUser(name)) {
-            this.isUser(name).addFollower(this.isUser(followerName));
+        if (this.findUser(name)) {
+            this.findUser(name).addFollower(this.findUser(followerName));
         }
     }
 
     displayWall(username) {
-        if (this.isUser(username)) {
-            this.isUser(username).printWall();
+        if (this.findUser(username)) {
+            this.findUser(username).printWall();
         }
     }
 }
