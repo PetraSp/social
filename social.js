@@ -23,12 +23,14 @@ class Social {
         }
     }
 
+    // add a new user
     addUser (name) {
         const newUser = new User(name);
         this.users.push(newUser); 
         return newUser; 
     }
-
+    
+    // if user exists, return it, else return null
     findUser (username) {
         for (let i = 0; i < this.users.length; i++) {
             if (username === this.users[i].name) {
@@ -38,12 +40,15 @@ class Social {
         return null;
     }
 
+    // if user and followed user exist, subscribe to that user's wall
     followUser(name, followedName) {
         if (this.findUser(name)) {
-            this.findUser(name).addFollower(this.findUser(followedName));
+            if (this.findUser(followedName)){
+                this.findUser(name).addFollower(this.findUser(followedName));
+            }
         }
     }
-
+    
     displayWall(username) {
         if (this.findUser(username)) {
             this.findUser(username).printWall();
