@@ -13,10 +13,12 @@ class User {
         return newTweet;
     }
 
-    printMessages() {
+    getMessagesAsString() {
+        const messages = [];
         for (let i = this.tweets.length-1; i >= 0; i--) {
-            console.log(this.tweets[i].toString());
+            messages.push(this.tweets[i].toString());
         }
+        return messages;
     }
 
     printWall() {

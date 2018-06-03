@@ -5,7 +5,7 @@ class Social {
         this.users = [];
     }
 
-    // if user exist, add a message
+    // if user exists, add a message, else create a new user and add a message
     postMessage(name, messsage) {
         if (this.findUser(name)) {
             this.findUser(name).addTweet(messsage);
@@ -16,9 +16,10 @@ class Social {
         }
     }
 
-    read(username) {
+    // if user exists, return an array of his messages as string 
+    readMessages(username) {
         if (this.findUser(username)) {
-            this.findUser(username).printMessages();
+            return this.findUser(username).getMessagesAsString();
         }
     }
 
@@ -37,9 +38,9 @@ class Social {
         return null;
     }
 
-    followUser(name, followerName) {
+    followUser(name, followedName) {
         if (this.findUser(name)) {
-            this.findUser(name).addFollower(this.findUser(followerName));
+            this.findUser(name).addFollower(this.findUser(followedName));
         }
     }
 

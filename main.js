@@ -18,11 +18,14 @@ function main() {
                     social.postMessage(username, message);
                     break;
                 case undefined:
-                    social.read(username);
+                    const messages = social.readMessages(username);
+                    for (let i = 0; i < messages.length; i++) {
+                        console.log(messages[i]);
+                    }
                     break;
                 case "follows":
-                    let followName = command.split(" follows ")[1];
-                    social.followUser(username, followName);
+                    let followedName = command.split(" follows ")[1];
+                    social.followUser(username, followedName);
                     break;
                 case "wall":
                     social.displayWall(username);
