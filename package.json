@@ -1,12 +1,12 @@
 {
   "name": "social",
   "version": "1.0.0",
-  "description": "Social application like twitter",
+  "description": "A console-based social networking application similar to​ ​Twitter​",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js"
   },
-  "author": "Petra",
+  "author": "Petra Spirkova",
   "license": "ISC"
 }
